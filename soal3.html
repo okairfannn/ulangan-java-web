@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengecekan Bilangan Positif/Negatif</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            margin: 20px;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #ff8800;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ff8800;
+        }
+
+        #hasilPengecekan {
+            font-weight: bold;
+            color: #ff8800;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pengecekan Bilangan Positif/Negatif</h1>
+    <p>Masukkan sebuah bilangan: <input type="number" id="bilanganInput"></p>
+    <button onclick="cekBilangan()">Cek</button>
+    <p id="hasilPengecekan"></p>
+
+    <script>
+        function cekBilangan() {
+            var bilangan = parseFloat(document.getElementById("bilanganInput").value);
+            var hasilPengecekan = document.getElementById("hasilPengecekan");
+
+            if (isNaN(bilangan)) {
+                hasilPengecekan.textContent = "Input tidak valid. Harap masukkan angka.";
+            } else if (bilangan > 0) {
+                hasilPengecekan.textContent = "Bilangan ini adalah bilangan positif.";
+            } else if (bilangan < 0) {
+                hasilPengecekan.textContent = "Bilangan ini adalah bilangan negatif.";
+            } else {
+                hasilPengecekan.textContent = "Bilangan ini adalah nol.";
+            }
+        }
+    </script>
+</body>
+</html>

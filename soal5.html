@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Evaluasi Nilai</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color: #7006b6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> Evaluasi Nilai</h1>
+    <p>Masukkan nilai score: <input type="text" id="scoreInput" /></p>
+    <button onclick="evaluasiNilai()">Evaluasi</button>
+    <p id="result"></p>
+
+    <script>
+        function evaluasiNilai() {
+            var score = parseInt(document.getElementById("scoreInput").value);
+            var result = "";
+
+            if (score >= 90) {
+                result = "Selamat! Anda mendapatkan nilai A.";
+            } else if (score >= 80 && score <= 89) {
+                result = "Anda mendapatkan nilai B.";
+            } else if (score >= 70 && score <= 79) {
+                result = "Anda mendapatkan nilai C.";
+            } else if (score >= 60 && score <= 69) {
+                result = "Anda mendapatkan nilai D.";
+            } else {
+                result = "Anda mendapatkan nilai E.";
+            }
+
+            document.getElementById("result").textContent = result;
+        }
+    </script>
+</body>
+
+</html>

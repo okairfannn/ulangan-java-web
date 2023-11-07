@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Login</title>
+</head>
+<body>
+    <div class="login-box">
+        <h1>Stematel Login</h1>
+        <p>Username: <input type="text" id="username" /></p>
+        <p>Password: <input type="password" id="password" /></p>
+        <button onclick="checkLogin()">Login</button>
+        <p id="result"></p>
+    </div>
+    
+    <script>
+        function checkLogin() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var result = "";
+    
+            if (username === "stematel" && password === "2023") {
+                result = "Selamat anda berhasil login";
+            } else {
+                result = "Maaf anda gagal login";
+            }
+    
+            document.getElementById("result").textContent = result;
+        }
+    </script>
+
+
+
+
+</body>
+</html>
